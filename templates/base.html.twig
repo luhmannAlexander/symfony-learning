@@ -19,6 +19,20 @@
         {% endif %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        {% block aside %}
+                            {% include '_navigation.html.twig' %}
+                        {% endblock %}
+                    </div>
+                    <div class="col-6">
+                        {% block main %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
     </body>
 </html>

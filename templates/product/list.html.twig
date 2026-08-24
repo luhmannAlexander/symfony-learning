@@ -8,6 +8,7 @@
         <tr>
             <th>Name</th>
             <th>Preis</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +16,18 @@
             <tr>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
+                <td><a href="{{ path('product_show',{'id':product.id}) }}" class="btn btn-warning">Show</a></td>
+                <td><a href="{{ path('product_edit',{'id':product.id}) }}" class="btn btn-secondary">edit</a></td>
+                <td><a href="{{ path('product_update',{'id':product.id}) }}" class="btn btn-primary">Update</a></td>
+                <td><a href="{{ path('product_delete',{'id':product.id}) }}" class="btn btn-danger">Delete</a></td>
             </tr>
         {% endfor %}
     </tbody>
+    <tfoot>
+        <tr>
+            <th>Total</th>
+            <td>{{ total }}</td>
+        </tr>
+    </tfoot>
 </table>
 {% endblock %}
